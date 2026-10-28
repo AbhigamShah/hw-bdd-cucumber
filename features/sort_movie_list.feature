@@ -22,12 +22,16 @@ Background: movies have been added to database
   And I am on the RottenPotatoes home page
   Then 10 seed movies should exist
 
+
 Scenario: sort movies alphabetically
   When I select "Title" from "sort_by"
-  # your steps here
-  Then complete the rest of of this scenario
+  And I press "Refresh"
+  Then I should see "Aladdin" before "Amelie" in the movie list
+
+
 
 Scenario: sort movies in increasing order of release date
   When I select "Release date" from "sort_by"
-  # your steps here
-  Then complete the rest of of this scenario
+  And I press "Refresh"
+  Then I should see "2001: A Space Odyssey" before "The Terminator" in the movie list
+
